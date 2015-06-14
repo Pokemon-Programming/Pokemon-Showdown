@@ -10,11 +10,11 @@ exports.BattleScripts = {
 			switch (tier) {
 			case 'UU':
 			case 'BL2':
-				adjustment = 5;
+				adjustment = 7000;
 				break;
 			case 'RU':
 			case 'BL3':
-				adjustment = 10;
+				adjustment = 8000;
 				break;
 			case 'NU':
 			case 'BL4':
@@ -22,12 +22,12 @@ exports.BattleScripts = {
 			case 'NFE':
 			case 'LC Uber':
 			case 'LC':
-				adjustment = 15;
+				adjustment = 9000;
 			}
 
 			if (adjustment) {
 				for (var j in this.data.Pokedex[i].baseStats) {
-					this.modData('Pokedex', i).baseStats[j] = this.clampIntRange(this.data.Pokedex[i].baseStats[j] + adjustment, 1, 255);
+					this.modData('Pokedex', i).baseStats[j] = this.clampIntRange(this.data.Pokedex[i].baseStats[j] + adjustment, 1, 9999);
 				}
 			}
 		}
